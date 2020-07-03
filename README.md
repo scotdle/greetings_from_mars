@@ -1,4 +1,4 @@
-# national_parks_alert_tracker_v2
+# greetings_from_mars
 
 ## Project setup
 ```
