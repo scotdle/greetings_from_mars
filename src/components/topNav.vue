@@ -16,7 +16,7 @@
     <v-app-bar app dark>
       <v-spacer></v-spacer>
 
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>GREETINGS FROM MARS</v-toolbar-title>
 
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
@@ -33,8 +33,8 @@ export default {
   },
 
   data: () => ({
-    drawer: true
-  })
+    drawer: false
+  }),
 };
 </script>
 

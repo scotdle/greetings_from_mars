@@ -2,6 +2,7 @@
   <v-container>
     <v-date-picker
       v-model="picker"
+      @click:date= "getClickedDate()"
       :landscape="landscape"
       :reactive="reactive"
       :min="min"
@@ -12,12 +13,12 @@
       :type="month ? 'month' : 'date'"
       :multiple="multiple"
       :readonly="readonly"
-      :events="enableEvents ? functionEvents : null"
     ></v-date-picker>
   </v-container>
 </template>
 
 <script>
+import { getClickedDate } from "../js/store";
 const todaysDate = new Date();
 const threeDaysAgo = todaysDate - 1000 * 60 * 60 * 24 * 3;
 const roverAPIDate = new Date(threeDaysAgo);
@@ -38,7 +39,24 @@ export default {
     month: false,
     multiple: false,
     readonly: false,
-    enableEvents: false
-  })
+  }),
+
+  created() {
+
+  },
+
+  vuex: {
+      mutations: { getClickedDate }
+    },
+
+  methods: {
+  
+    getClickedDate: function() {
+      return this.$store.dispatch("getClickedDate", {
+        clickedDate: this.picker
+      })
+    }
+    
+  }
 };
 </script>

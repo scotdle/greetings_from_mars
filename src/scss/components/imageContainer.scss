@@ -1,0 +1,11 @@
+@include block('the-image') {
+    border-radius: 25px;
+    padding: 20px;
+    position: relative;
+    height: auto;
+    width: 50%;
+
+    @include element('container') {
+
+    }
+}
